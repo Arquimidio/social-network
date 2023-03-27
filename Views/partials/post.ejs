@@ -1,0 +1,8 @@
+<div>
+    <% if(locals.user.id === post.id_user ) { %>
+        <mark onclick="deletePost('<%= post.id %>')">Delete</mark>
+    <% } %>
+    <p><%= post.content %></p>
+    <small><%= post.created %> ago</small>
+    <small><%= post.name %></small>    
+</div>

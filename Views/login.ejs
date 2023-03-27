@@ -1,0 +1,9 @@
+<%- include('partials/top') %>
+<%- include('partials/navbar') %>
+<form action="/auth/login" method="POST">
+    <input type="text" name="email">
+    <input type="password" name="password">
+    <button>Login</button>
+    <h1><%= locals.attempt? locals.success? 'Ok' : 'Error: Wrong Credentials' : '' %></h1>
+</form>
+<%- include('partials/bottom') %>

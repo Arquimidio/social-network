@@ -1,0 +1,11 @@
+<%- include('partials/top') %>
+<%- include('partials/navbar') %>
+<form action="/auth/signup" method="POST">
+    <input type="text" name="name" required>
+    <input type="date" name="birthday" required>
+    <input type="text" name="email" required>
+    <input type="password" name="password" required>
+    <button>Sign Up</button>
+    <h1><%= locals.attempt? locals.success? 'Signed up' : 'Error: email already exists' : '' %></h1>
+</form>
+<%- include('partials/bottom') %>

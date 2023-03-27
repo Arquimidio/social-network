@@ -1,0 +1,20 @@
+<%- include('partials/top') %>
+<%- include('partials/navbar') %>
+<main>
+    <form action="/feed" method="POST">
+        <input type="hidden" value="<%= user.id %>" name="id_user">
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <button>Post</button>
+        <% for(const post of posts) { %>
+            <%- include('partials/post', { post }) %>
+        <% } %>
+    </form>
+</main>
+<%- include('partials/bottom') %>
+<script>
+    async function deletePost(postId) {
+        await fetch(`/feed/${postId}`, { method: 'DELETE' });
+        window.location.href = '/feed';
+    }
+</script>
+
